@@ -1,0 +1,2042 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#fce4ec" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Happy Birthday My Love 🎀</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Quicksand:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ===== ROOT VARIABLES ===== */
+      :root {
+        --rose: #f9a8c9;
+        --rose-light: #fde8f1;
+        --rose-deep: #e87aad;
+        --blush: #fce4ec;
+        --cream: #fff9f5;
+        --peach: #ffd6c9;
+        --lilac: #ead6f5;
+        --gold: #f2c57c;
+        --text-dark: #5a2d45;
+        --text-mid: #8b5070;
+        --text-soft: #c490a8;
+      }
+
+      /* ===== RESET ===== */
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family:
+          "Quicksand",
+          "Segoe UI",
+          system-ui,
+          -apple-system,
+          sans-serif;
+        background: var(--cream);
+        color: var(--text-dark);
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* ===== SCROLLBAR ===== */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--rose-light);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--rose-deep);
+        border-radius: 3px;
+      }
+
+      /* ===== HERO ===== */
+      #hero {
+        position: relative;
+        min-height: 100vh;
+        background: linear-gradient(
+          160deg,
+          #fff0f7 0%,
+          #fce4ec 35%,
+          #f8d7ea 65%,
+          #ead6f5 100%
+        );
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+      }
+      #canvas-confetti {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        padding: 2rem 1.2rem;
+      }
+      .hero-badge {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(8px);
+        border: 1.5px solid rgba(249, 168, 201, 0.5);
+        border-radius: 100px;
+        padding: 0.4rem 1.4rem;
+        font-size: 0.8rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--text-mid);
+        margin-bottom: 1.5rem;
+        animation: fadeDown 1s ease both;
+      }
+      .hero-title {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: clamp(2.6rem, 9vw, 7rem);
+        font-weight: 700;
+        line-height: 1.05;
+        color: var(--text-dark);
+        animation: fadeUp 1s 0.2s ease both;
+      }
+      .hero-title .italic {
+        font-style: italic;
+        color: var(--rose-deep);
+      }
+      .hero-name {
+        font-family: "Playfair Display", Georgia, serif;
+        font-style: italic;
+        font-size: clamp(1.7rem, 6vw, 5rem);
+        color: var(--rose-deep);
+        animation: fadeUp 1s 0.4s ease both;
+        margin-top: 0.2rem;
+      }
+      .hero-subtitle {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-style: italic;
+        font-size: clamp(0.95rem, 2.5vw, 1.4rem);
+        color: var(--text-mid);
+        margin-top: 1.2rem;
+        animation: fadeUp 1s 0.6s ease both;
+        max-width: 500px;
+      }
+      .hero-scroll {
+        margin-top: 3rem;
+        animation: fadeUp 1s 1s ease both;
+      }
+      .scroll-dot {
+        width: 2px;
+        height: 50px;
+        background: linear-gradient(to bottom, var(--rose-deep), transparent);
+        margin: 0 auto;
+        animation: scrollPulse 2s infinite;
+      }
+      .float-heart {
+        position: absolute;
+        font-size: 1.5rem;
+        animation: floatHeart linear infinite;
+        pointer-events: none;
+        opacity: 0.7;
+        z-index: 0;
+      }
+
+      /* ===== SECTION COMMON ===== */
+      section {
+        padding: 5rem 1.2rem;
+      }
+      .section-tag {
+        display: inline-block;
+        background: var(--rose-light);
+        color: var(--text-mid);
+        font-size: 0.75rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        border-radius: 100px;
+        padding: 0.35rem 1.2rem;
+        margin-bottom: 1rem;
+      }
+      .section-title {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: clamp(1.8rem, 5vw, 3.5rem);
+        color: var(--text-dark);
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
+      }
+      .section-title .italic {
+        font-style: italic;
+        color: var(--rose-deep);
+      }
+      .section-divider {
+        width: 60px;
+        height: 2px;
+        background: linear-gradient(to right, var(--rose), var(--rose-deep));
+        border-radius: 2px;
+        margin: 1rem auto 2.5rem;
+      }
+
+      /* ===== WISHES ===== */
+      #wishes {
+        background: linear-gradient(135deg, #fff5f9 0%, #fce8f3 100%);
+        text-align: center;
+      }
+      .wishes-card {
+        max-width: 700px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(10px);
+        border-radius: 24px;
+        border: 1.5px solid rgba(249, 168, 201, 0.35);
+        padding: 3rem 2.5rem;
+        box-shadow:
+          0 20px 60px rgba(232, 122, 173, 0.12),
+          0 4px 20px rgba(232, 122, 173, 0.08);
+        position: relative;
+        overflow: hidden;
+      }
+      .wishes-card::before {
+        content: "\201C";
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 12rem;
+        color: rgba(249, 168, 201, 0.12);
+        position: absolute;
+        top: -2rem;
+        left: 1rem;
+        line-height: 1;
+        pointer-events: none;
+      }
+      .wishes-text {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: clamp(1rem, 2.5vw, 1.5rem);
+        line-height: 1.9;
+        color: var(--text-mid);
+        font-style: italic;
+        position: relative;
+        z-index: 1;
+      }
+      .wishes-signature {
+        margin-top: 2rem;
+        font-family: "Playfair Display", Georgia, serif;
+        font-style: italic;
+        color: var(--rose-deep);
+        font-size: 1.3rem;
+      }
+      .star-row {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        margin: 1.5rem 0;
+      }
+      .star {
+        color: var(--gold);
+        font-size: 1.2rem;
+        animation: twinkle 2s ease-in-out infinite;
+      }
+      .star:nth-child(2) {
+        animation-delay: 0.3s;
+      }
+      .star:nth-child(3) {
+        animation-delay: 0.6s;
+      }
+      .star:nth-child(4) {
+        animation-delay: 0.9s;
+      }
+      .star:nth-child(5) {
+        animation-delay: 1.2s;
+      }
+
+      /* ===== TIMELINE ===== */
+      #timeline {
+        background: var(--cream);
+        text-align: center;
+        padding: 5rem 1rem;
+      }
+      .timeline-container {
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative;
+      }
+      .timeline-line {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          var(--rose) 10%,
+          var(--rose-deep) 50%,
+          var(--rose) 90%,
+          transparent
+        );
+        transform: translateX(-50%);
+      }
+
+      /* Timeline item — 2 cột bất kể màn hình */
+      .tl-item {
+        display: flex;
+        align-items: stretch;
+        margin-bottom: 3rem;
+        position: relative;
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+      .tl-item.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .tl-left {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 2rem;
+      }
+      .tl-right {
+        flex: 1;
+        display: flex;
+        justify-content: flex-start;
+        padding-left: 2rem;
+      }
+
+      .tl-dot-wrap {
+        position: absolute;
+        left: 50%;
+        top: 1.5rem;
+        transform: translateX(-50%);
+        z-index: 2;
+      }
+      .tl-dot {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--rose), var(--rose-deep));
+        border: 3px solid white;
+        box-shadow:
+          0 0 0 4px rgba(232, 122, 173, 0.25),
+          0 0 14px rgba(232, 122, 173, 0.4);
+      }
+
+      /* Text card */
+      .tl-card {
+        background: white;
+        border-radius: 16px;
+        border: 1.5px solid rgba(249, 168, 201, 0.3);
+        padding: 1.2rem 1.4rem;
+        box-shadow: 0 8px 30px rgba(232, 122, 173, 0.08);
+        text-align: left;
+        width: 100%;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        position: relative;
+      }
+      .tl-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 40px rgba(232, 122, 173, 0.18);
+      }
+      .tl-card::after {
+        content: "";
+        position: absolute;
+        top: 1.5rem;
+        width: 18px;
+        height: 2px;
+        background: rgba(249, 168, 201, 0.5);
+      }
+      .tl-left .tl-card::after {
+        right: -20px;
+      }
+      .tl-right .tl-card::after {
+        left: -20px;
+      }
+
+      /* Image wrap — giữ đúng tỉ lệ ảnh */
+      .tl-img-wrap {
+        width: 100%;
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1.5px solid rgba(249, 168, 201, 0.3);
+        box-shadow: 0 10px 35px rgba(232, 122, 173, 0.12);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        position: relative;
+        background: #fff5f9;
+      }
+      .tl-img-wrap:hover {
+        transform: translateY(-4px) scale(1.01);
+        box-shadow: 0 18px 45px rgba(232, 122, 173, 0.2);
+      }
+      .tl-img-wrap img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: contain; /* giữ nguyên tỉ lệ, không cắt */
+      }
+      .tl-img-label {
+        background: linear-gradient(to top, rgba(90, 45, 69, 0.6), transparent);
+        padding: 0.8rem 0.8rem 0.6rem;
+        color: white;
+        font-size: 0.75rem;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        text-align: center;
+        font-family: "Quicksand", sans-serif;
+        font-weight: 600;
+      }
+
+      .tl-year {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: clamp(1.4rem, 4vw, 2rem);
+        font-weight: 700;
+        color: var(--rose-deep);
+        display: block;
+        margin-bottom: 0.2rem;
+        line-height: 1;
+      }
+      .tl-event {
+        font-weight: 600;
+        font-size: clamp(0.8rem, 2.5vw, 1rem);
+        color: var(--text-dark);
+        margin-bottom: 0.4rem;
+        margin-top: 0.2rem;
+      }
+      .tl-desc {
+        font-size: clamp(0.75rem, 2vw, 0.88rem);
+        color: var(--text-soft);
+        line-height: 1.6;
+      }
+
+      /* ===== MEMORIES ===== */
+      #memories {
+        background: linear-gradient(180deg, #fff5f9 0%, #fce4f0 100%);
+        text-align: center;
+      }
+      .memories-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.2rem;
+        max-width: 900px;
+        margin: 0 auto;
+        align-items: start;
+      }
+      .memory-card {
+        background: white;
+        border-radius: 18px;
+        border: 1.5px solid rgba(249, 168, 201, 0.3);
+        overflow: hidden;
+        box-shadow: 0 8px 25px rgba(232, 122, 173, 0.08);
+        opacity: 0;
+        transform: scale(0.95) translateY(20px);
+        transition: all 0.5s ease;
+        display: flex;
+        flex-direction: column;
+      }
+      .memory-card.visible {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+      .memory-card:hover {
+        transform: translateY(-5px) scale(1.01);
+        box-shadow: 0 18px 45px rgba(232, 122, 173, 0.18);
+      }
+
+      /* ảnh memory — chiều cao cố định, đồng đều tất cả card */
+      .memory-img-wrap {
+        width: 100%;
+        height: 240px;
+        overflow: hidden;
+        background: #fff5f9;
+        flex-shrink: 0;
+      }
+      .memory-img-wrap img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: center center;
+      }
+      .memory-placeholder {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
+        font-size: 2rem;
+        color: rgba(232, 122, 173, 0.4);
+      }
+      .memory-placeholder span {
+        font-size: 0.75rem;
+        color: var(--text-soft);
+        letter-spacing: 1px;
+        font-family: "Quicksand", sans-serif;
+      }
+      .memory-body {
+        padding: 1rem 1.2rem 1.2rem;
+      }
+      .memory-date {
+        font-size: 0.72rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--rose-deep);
+        margin-bottom: 0.3rem;
+      }
+      .memory-title {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: clamp(0.9rem, 2vw, 1.1rem);
+        color: var(--text-dark);
+        margin-bottom: 0.4rem;
+      }
+      .memory-note {
+        font-size: clamp(0.75rem, 1.8vw, 0.88rem);
+        color: var(--text-soft);
+        line-height: 1.6;
+      }
+
+      /* ===== CLOSING ===== */
+      #closing {
+        background: linear-gradient(
+          160deg,
+          #1a0a12 0%,
+          #2d1020 40%,
+          #1e0d1a 70%,
+          #120820 100%
+        );
+        text-align: center;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+        padding: 6rem 1.5rem;
+      }
+      #starfield {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .sakura-canvas {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 1;
+      }
+      .glow-orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.15;
+        animation: orbFloat 8s ease-in-out infinite;
+        pointer-events: none;
+      }
+      .glow-orb:nth-child(1) {
+        width: 400px;
+        height: 400px;
+        background: #f9a8c9;
+        top: -10%;
+        left: -10%;
+      }
+      .glow-orb:nth-child(2) {
+        width: 300px;
+        height: 300px;
+        background: #ead6f5;
+        top: 50%;
+        right: -5%;
+        animation-delay: 3s;
+      }
+      .glow-orb:nth-child(3) {
+        width: 250px;
+        height: 250px;
+        background: #f2c57c;
+        bottom: 10%;
+        left: 20%;
+        animation-delay: 5s;
+      }
+      .love-word {
+        position: absolute;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-style: italic;
+        color: rgba(249, 168, 201, 0.25);
+        pointer-events: none;
+        animation: loveDrift linear infinite;
+        white-space: nowrap;
+        z-index: 1;
+      }
+      .sparkle-container {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 1;
+      }
+      .sparkle {
+        position: absolute;
+        border-radius: 50%;
+        background: var(--gold);
+        animation: sparklePop linear infinite;
+      }
+      .closing-inner {
+        position: relative;
+        z-index: 2;
+        max-width: 680px;
+        padding: 2rem;
+      }
+      .closing-heart {
+        font-size: 5rem;
+        display: block;
+        animation: heartBeat 1.5s ease-in-out infinite;
+        margin-bottom: 1.5rem;
+        filter: drop-shadow(0 0 20px rgba(249, 168, 201, 0.6));
+      }
+      .closing-title {
+        font-family: "Playfair Display", Georgia, serif;
+        font-style: italic;
+        font-size: clamp(1.8rem, 5vw, 3.8rem);
+        color: #fff0f7;
+        margin-bottom: 1.2rem;
+        text-shadow: 0 0 40px rgba(249, 168, 201, 0.3);
+        line-height: 1.25;
+      }
+      .closing-sub {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-style: italic;
+        font-size: clamp(1rem, 2.5vw, 1.35rem);
+        color: rgba(249, 168, 201, 0.85);
+        line-height: 1.85;
+        margin-bottom: 1rem;
+      }
+      .closing-divider {
+        width: 80px;
+        height: 1px;
+        background: linear-gradient(
+          to right,
+          transparent,
+          var(--rose-deep),
+          transparent
+        );
+        margin: 2rem auto;
+      }
+      .petal-row {
+        display: flex;
+        justify-content: center;
+        gap: 0.4rem;
+        font-size: 1.4rem;
+        margin: 1.5rem 0;
+        animation: petalRow 3s ease-in-out infinite;
+      }
+      .cake-counter {
+        margin-top: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        filter: drop-shadow(0 0 15px rgba(242, 197, 124, 0.4));
+      }
+      .candle {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        animation: candleFlicker 0.8s ease-in-out infinite alternate;
+      }
+      .candle:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .candle:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+      .candle:nth-child(4) {
+        animation-delay: 0.1s;
+      }
+      .flame {
+        font-size: 1.2rem;
+      }
+      .stick {
+        width: 8px;
+        height: 28px;
+        background: linear-gradient(to bottom, #f9a8c9, #e87aad);
+        border-radius: 3px 3px 2px 2px;
+      }
+      .closing-final {
+        margin-top: 2.5rem;
+        font-family: "Playfair Display", Georgia, serif;
+        font-style: italic;
+        color: rgba(249, 168, 201, 0.7);
+        font-size: 1.15rem;
+        letter-spacing: 0.5px;
+      }
+      .moon-deco {
+        position: absolute;
+        top: 8%;
+        right: 8%;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle at 35% 35%,
+          rgba(252, 228, 236, 0.15),
+          transparent 70%
+        );
+        border: 1px solid rgba(249, 168, 201, 0.1);
+        box-shadow:
+          0 0 60px rgba(249, 168, 201, 0.08),
+          inset 0 0 30px rgba(249, 168, 201, 0.05);
+        z-index: 1;
+        animation: moonGlow 4s ease-in-out infinite;
+      }
+      .heart-rain {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 200px;
+        pointer-events: none;
+        z-index: 1;
+        background: linear-gradient(
+          to top,
+          rgba(249, 168, 201, 0.06),
+          transparent
+        );
+      }
+
+      /* ===== MUSIC PLAYER ===== */
+      #music-player {
+        position: fixed;
+        bottom: max(1.2rem, env(safe-area-inset-bottom, 1.2rem));
+        right: max(1.2rem, env(safe-area-inset-right, 1.2rem));
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.6rem;
+      }
+      .music-panel {
+        background: rgba(255, 255, 255, 0.94);
+        backdrop-filter: blur(16px);
+        border: 1.5px solid rgba(249, 168, 201, 0.45);
+        border-radius: 18px;
+        padding: 1rem 1.1rem;
+        box-shadow: 0 12px 40px rgba(232, 122, 173, 0.18);
+        width: 250px;
+        display: none;
+        animation: panelSlide 0.3s ease;
+      }
+      .music-panel.open {
+        display: block;
+      }
+      .music-song-name {
+        font-family: "Playfair Display", Georgia, serif;
+        font-style: italic;
+        font-size: 0.88rem;
+        color: var(--text-dark);
+        text-align: center;
+        margin-bottom: 0.8rem;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .music-song-name span {
+        display: inline-block;
+        animation: marquee 12s linear infinite;
+      }
+      .music-controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.7rem;
+        margin-bottom: 0.8rem;
+      }
+      .music-btn {
+        background: linear-gradient(135deg, var(--rose), var(--rose-deep));
+        border: none;
+        border-radius: 50%;
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: white;
+        font-size: 1.1rem;
+        box-shadow: 0 4px 12px rgba(232, 122, 173, 0.4);
+        transition: transform 0.2s ease;
+      }
+      .music-btn:hover {
+        transform: scale(1.08);
+      }
+      .music-btn.sm {
+        width: 32px;
+        height: 32px;
+        font-size: 0.85rem;
+        background: rgba(249, 168, 201, 0.2);
+        color: var(--rose-deep);
+        box-shadow: none;
+      }
+      .music-btn.sm:hover {
+        background: rgba(249, 168, 201, 0.4);
+      }
+      .music-progress,
+      .music-volume {
+        width: 100%;
+        -webkit-appearance: none;
+        appearance: none;
+        height: 4px;
+        border-radius: 2px;
+        background: var(--rose-light);
+        outline: none;
+        cursor: pointer;
+      }
+      .music-progress {
+        margin-bottom: 0.4rem;
+      }
+      .music-progress::-webkit-slider-thumb,
+      .music-volume::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background: var(--rose-deep);
+        cursor: pointer;
+        box-shadow: 0 0 5px rgba(232, 122, 173, 0.5);
+      }
+      .music-time {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.7rem;
+        color: var(--text-soft);
+        margin-bottom: 0.6rem;
+      }
+      .music-volume-row {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        margin-bottom: 0.6rem;
+      }
+      .music-volume-row span {
+        font-size: 0.8rem;
+      }
+      .music-upload-label {
+        display: block;
+        text-align: center;
+        font-size: 0.75rem;
+        color: var(--text-mid);
+        cursor: pointer;
+        padding: 0.4rem;
+        border-radius: 10px;
+        border: 1.5px dashed rgba(249, 168, 201, 0.5);
+        transition: background 0.2s;
+      }
+      .music-upload-label:hover {
+        background: var(--rose-light);
+      }
+      .music-toggle {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        border: none;
+        background: linear-gradient(135deg, var(--rose), var(--rose-deep));
+        color: white;
+        font-size: 1.4rem;
+        cursor: pointer;
+        box-shadow: 0 6px 20px rgba(232, 122, 173, 0.45);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: musicPulse 2.5s ease-in-out infinite;
+        transition: transform 0.2s;
+      }
+      .music-toggle:hover {
+        transform: scale(1.08);
+      }
+      .music-note-spin {
+        display: inline-block;
+      }
+      .music-toggle.playing .music-note-spin {
+        animation: noteSpin 2s linear infinite;
+      }
+
+      /* ===== KEYFRAMES ===== */
+      @keyframes fadeDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes scrollPulse {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scaleY(1);
+        }
+        50% {
+          opacity: 0.4;
+          transform: scaleY(0.6);
+        }
+      }
+      @keyframes floatHeart {
+        0% {
+          transform: translateY(110vh) rotate(-10deg);
+          opacity: 0;
+        }
+        10% {
+          opacity: 0.7;
+        }
+        90% {
+          opacity: 0.5;
+        }
+        100% {
+          transform: translateY(-20vh) rotate(10deg);
+          opacity: 0;
+        }
+      }
+      @keyframes twinkle {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.5;
+          transform: scale(0.8);
+        }
+      }
+      @keyframes heartBeat {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        14% {
+          transform: scale(1.15);
+        }
+        28% {
+          transform: scale(1);
+        }
+        42% {
+          transform: scale(1.1);
+        }
+        70% {
+          transform: scale(1);
+        }
+      }
+      @keyframes orbFloat {
+        0%,
+        100% {
+          transform: translateY(0) scale(1);
+        }
+        50% {
+          transform: translateY(-30px) scale(1.05);
+        }
+      }
+      @keyframes loveDrift {
+        0% {
+          transform: translateY(110vh) rotate(-5deg);
+          opacity: 0;
+        }
+        5% {
+          opacity: 1;
+        }
+        95% {
+          opacity: 0.3;
+        }
+        100% {
+          transform: translateY(-20vh) rotate(5deg);
+          opacity: 0;
+        }
+      }
+      @keyframes sparklePop {
+        0% {
+          opacity: 0;
+          transform: scale(0) rotate(0deg);
+        }
+        20% {
+          opacity: 1;
+          transform: scale(1) rotate(180deg);
+        }
+        80% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+          transform: scale(0) rotate(360deg);
+        }
+      }
+      @keyframes petalRow {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-4px);
+        }
+      }
+      @keyframes candleFlicker {
+        from {
+          transform: scaleY(1);
+        }
+        to {
+          transform: scaleY(1.06) translateY(-1px);
+        }
+      }
+      @keyframes moonGlow {
+        0%,
+        100% {
+          opacity: 0.6;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.05);
+        }
+      }
+      @keyframes panelSlide {
+        from {
+          opacity: 0;
+          transform: translateY(10px) scale(0.97);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        40% {
+          transform: translateX(-60%);
+        }
+        60% {
+          transform: translateX(-60%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+      @keyframes musicPulse {
+        0%,
+        100% {
+          box-shadow:
+            0 6px 20px rgba(232, 122, 173, 0.45),
+            0 0 0 0 rgba(249, 168, 201, 0.5);
+        }
+        50% {
+          box-shadow:
+            0 6px 24px rgba(232, 122, 173, 0.55),
+            0 0 0 10px rgba(249, 168, 201, 0);
+        }
+      }
+      @keyframes noteSpin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* ===== RESPONSIVE ===== */
+
+      /* Tablet & small screen — giảm padding timeline */
+      @media (max-width: 768px) {
+        section {
+          padding: 4rem 1rem;
+        }
+
+        /* Timeline: thu nhỏ padding nhưng VẪN GIỮ 2 CỘT */
+        .timeline-container {
+          max-width: 100%;
+        }
+        .tl-left {
+          padding-right: 1rem;
+        }
+        .tl-right {
+          padding-left: 1rem;
+        }
+        .tl-card {
+          padding: 0.9rem 1rem;
+        }
+        .tl-card::after {
+          width: 12px;
+        }
+        .tl-left .tl-card::after {
+          right: -14px;
+        }
+        .tl-right .tl-card::after {
+          left: -14px;
+        }
+
+        /* Memories — 2 cột */
+        .memories-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1rem;
+        }
+        .memory-img-wrap {
+          height: 200px;
+        }
+
+        .wishes-card {
+          padding: 2rem 1.4rem;
+        }
+      }
+
+      /* Mobile nhỏ (< 500px) — timeline VẪN 2 CỘT, chỉ nhỏ hơn */
+      @media (max-width: 500px) {
+        .hero-badge {
+          font-size: 0.65rem;
+          letter-spacing: 2px;
+          padding: 0.3rem 0.9rem;
+        }
+
+        .tl-left {
+          padding-right: 0.5rem;
+        }
+        .tl-right {
+          padding-left: 0.5rem;
+        }
+        .tl-card {
+          padding: 0.7rem 0.8rem;
+          border-radius: 12px;
+        }
+        .tl-img-wrap {
+          border-radius: 12px;
+        }
+        .tl-card::after {
+          display: none;
+        }
+        .tl-dot {
+          width: 14px;
+          height: 14px;
+        }
+
+        /* Memories — 1 cột trên mobile rất nhỏ */
+        .memories-grid {
+          grid-template-columns: 1fr;
+          max-width: 380px;
+        }
+        .memory-img-wrap {
+          height: 220px;
+        }
+
+        .wishes-card {
+          padding: 1.5rem 1rem;
+        }
+        .wishes-card::before {
+          font-size: 8rem;
+        }
+
+        #closing {
+          min-height: auto;
+          padding: 4rem 1rem;
+        }
+        .closing-title {
+          font-size: 1.7rem;
+        }
+
+        #music-player {
+          bottom: 0.8rem;
+          right: 0.8rem;
+        }
+        .music-panel {
+          width: 220px;
+        }
+        .music-toggle {
+          width: 46px;
+          height: 46px;
+          font-size: 1.2rem;
+        }
+      }
+
+      /* Landscape phone */
+      @media (max-height: 500px) and (orientation: landscape) {
+        #hero {
+          min-height: auto;
+          padding: 3rem 1.5rem;
+        }
+        #closing {
+          min-height: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ====== HERO ====== -->
+    <section id="hero">
+      <canvas id="canvas-confetti"></canvas>
+      <div id="hearts-container"></div>
+      <div class="hero-content">
+        <div class="hero-badge">✨ Sinh Nhật Hạnh Phúc ✨</div>
+        <h1 class="hero-title">Happy <span class="italic">Birthday</span></h1>
+        <p class="hero-name">My Love 🌸</p>
+        <p class="hero-subtitle">
+          "Em là điều tuyệt vời nhất đã xảy ra trong cuộc đời anh."
+        </p>
+        <div class="hero-scroll"><div class="scroll-dot"></div></div>
+      </div>
+    </section>
+
+    <!-- ====== WISHES ====== -->
+    <section id="wishes">
+      <div class="section-tag">💌 Lời Chúc</div>
+      <h2 class="section-title">
+        Gửi đến <span class="italic">trái tim em</span>
+      </h2>
+      <div class="section-divider"></div>
+      <div class="wishes-card">
+        <div class="star-row">
+          <span class="star">★</span><span class="star">★</span
+          ><span class="star">★</span><span class="star">★</span
+          ><span class="star">★</span>
+        </div>
+        <p class="wishes-text">
+          Hello yêu dấu của tui, hôm nay là ngày đặc biệt nhất trong năm — ngày
+          mà thế giới này +1 người đáng iu nhất xuất hiện để đến với anh. 🌸<br /><br />
+          Anh rất trân trọng từng khoảnh khắc được nhìn thấy em cười, được nghe
+          em kể chuyện, được ở bên em trong những ngày bình thường nhất hihi.<br /><br />
+          Chúc em một sinh nhật tràn đầy yêu thương, hạnh phúc và tất cả những
+          điều em mong muốn. Năm nay và mãi mãi, anh luôn ở đây — bên em.<br /><br />
+          Anh yêu em, nhiều hơn những gì anh có thể nói thành lời. 💕
+        </p>
+        <div class="star-row" style="margin-bottom: 0">
+          <span class="star">✦</span><span class="star">✦</span
+          ><span class="star">✦</span>
+        </div>
+        <p class="wishes-signature">— Người luôn yêu em nhất ❤️</p>
+      </div>
+    </section>
+
+    <!-- ====== TIMELINE ====== -->
+    <section id="timeline">
+      <div class="section-tag">🌱 Hành Trình</div>
+      <h2 class="section-title">
+        Những <span class="italic">dấu mốc</span> của em
+      </h2>
+      <div class="section-divider"></div>
+
+      <div class="timeline-container">
+        <div class="timeline-line"></div>
+
+        <!-- 1: Card trái, Ảnh phải -->
+        <div class="tl-item">
+          <div class="tl-left">
+            <div class="tl-card">
+              <span class="tl-year">2006</span>
+              <div class="tl-event">Chào embe đến thế giới</div>
+              <p class="tl-desc">
+                Khum có ảnh embe nên anh lấy tạm ảnh này v huhu.
+              </p>
+            </div>
+          </div>
+          <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
+          <div class="tl-right">
+            <div class="tl-img-wrap">
+              <img
+                src="anh/z7685527685289_659eded100efd57343d878ccd726b9b7.jpg"
+                alt="2006 · Ngày em chào đời"
+              />
+              <div class="tl-img-label">2006 · Ngày em chào đời</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2: Ảnh trái, Card phải -->
+        <div class="tl-item">
+          <div class="tl-left">
+            <div class="tl-img-wrap">
+              <img
+                src="anh/z7685527695025_5b34468757e0335a1cfab023e5dbcde2.jpg"
+                alt="2016 · Bước vào cổng trường"
+              />
+              <div class="tl-img-label">2016 · Bước vào cổng trường</div>
+            </div>
+          </div>
+          <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
+          <div class="tl-right">
+            <div class="tl-card">
+              <span class="tl-year">2016</span>
+              <div class="tl-event">Bước vào cổng trường</div>
+              <p class="tl-desc">
+                Cô bé ấy thật đáng iu. Khum rõ học lớp mấy nhưng chỉ có những
+                ảnh này hic
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3: Card trái, Ảnh phải -->
+        <div class="tl-item">
+          <div class="tl-left">
+            <div class="tl-card">
+              <span class="tl-year">2020</span>
+              <div class="tl-event">Tuổi thiếu nữ</div>
+              <p class="tl-desc">
+                Thui thì ảnh này cũng nhớn nhớn để vào lớp 10 ikk
+              </p>
+            </div>
+          </div>
+          <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
+          <div class="tl-right">
+            <div class="tl-img-wrap">
+              <img
+                src="anh/z7686983384477_8e18c1e436ea602771282ee854efff20.jpg"
+                alt="2020 · Tuổi thiếu nữ"
+              />
+              <div class="tl-img-label">2020 · Tuổi đẹp nhất</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4: Ảnh trái, Card phải -->
+        <div class="tl-item">
+          <div class="tl-left">
+            <div class="tl-img-wrap">
+              <img
+                src="anh/z7685527607677_396d96731b0f6152f76fe1ca56f732cb.jpg"
+                alt="2024 · Tốt nghiệp cấp 3"
+              />
+              <div class="tl-img-label">2024 · Tốt nghiệp cấp 3</div>
+            </div>
+          </div>
+          <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
+          <div class="tl-right">
+            <div class="tl-card">
+              <span class="tl-year">2024</span>
+              <div class="tl-event">Tốt nghiệp cấp 3</div>
+              <p class="tl-desc">
+                May có ảnh này gửi cho tui. Anh xin lũi vì anh khum quen em lúc
+                đó huhu
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5: Card trái, Ảnh phải -->
+        <div class="tl-item">
+          <div class="tl-left">
+            <div class="tl-card">
+              <span class="tl-year">2025</span>
+              <div class="tl-event">💕 Chúng mình gặp nhau</div>
+              <p class="tl-desc">
+                Khoảnh khắc đẹp nhất của cuộc đời anh — ngày mà em bước vào thế
+                giới của anh và làm cho mọi thứ trở nên tươi đẹp hơn.
+              </p>
+            </div>
+          </div>
+          <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
+          <div class="tl-right">
+            <div class="tl-img-wrap">
+              <img
+                src="anh/z7686928985889_3bdad721830b8865b4d8b8e34de57a02.jpg"
+                alt="2025 · Khi mình gặp nhau"
+              />
+              <div class="tl-img-label">2025 · Khi mình gặp nhau</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6: Full-width — Today -->
+        <div
+          class="tl-item"
+          style="
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+          "
+        >
+          <div
+            class="tl-dot-wrap"
+            style="
+              position: relative;
+              left: auto;
+              top: auto;
+              transform: none;
+              margin-bottom: 1.2rem;
+            "
+          >
+            <div
+              class="tl-dot"
+              style="
+                width: 26px;
+                height: 26px;
+                box-shadow:
+                  0 0 0 6px rgba(232, 122, 173, 0.2),
+                  0 0 28px rgba(232, 122, 173, 0.5);
+              "
+            ></div>
+          </div>
+          <div
+            class="tl-card"
+            style="
+              max-width: 460px;
+              text-align: center;
+              border-color: rgba(249, 168, 201, 0.6);
+              background: linear-gradient(135deg, #fff5fb, #fce8f3);
+              box-shadow: 0 12px 40px rgba(232, 122, 173, 0.2);
+            "
+          >
+            <span
+              class="tl-year"
+              style="text-align: center; display: block; font-size: 2.2rem"
+              >🎂 Hôm nay</span
+            >
+            <div
+              class="tl-event"
+              style="text-align: center; margin-top: 0.4rem"
+            >
+              Sinh nhật của em
+            </div>
+            <p
+              class="tl-desc"
+              style="
+                text-align: center;
+                margin-top: 0.4rem;
+                color: var(--text-mid);
+              "
+            >
+              Ngày mà cả vũ trụ dừng lại để cùng chúc mừng em — người con gái
+              tuyệt vời nhất mà anh từng gặp. 🌟
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== MEMORIES ====== -->
+    <section id="memories">
+      <div class="section-tag">📸 Kỷ Niệm</div>
+      <h2 class="section-title">
+        Những khoảnh khắc <span class="italic">của chúng mình</span>
+      </h2>
+      <div class="section-divider"></div>
+
+      <div class="memories-grid">
+        <div class="memory-card">
+          <div class="memory-img-wrap">
+            <div
+              class="memory-placeholder"
+              style="background: linear-gradient(135deg, #fde8f1, #ead6f5)"
+            >
+              <span
+                ><img
+                  src="anh/z7686951172713_84f471cb7ae33d65f1e2ea245e71a60c.jpg"
+                  alt=""
+              /></span>
+            </div>
+          </div>
+          <div class="memory-body">
+            <div class="memory-date">Tháng 9 · 2025</div>
+            <div class="memory-title">Lần đầu hẹn hò</div>
+            <p class="memory-note">
+              Mất hết đoạn chat rùi nên anh lấy tạm ảnh này thui hic
+            </p>
+          </div>
+        </div>
+
+        <div class="memory-card">
+          <div class="memory-img-wrap">
+            <div
+              class="memory-placeholder"
+              style="background: linear-gradient(135deg, #ffecd2, #fcb69f)"
+            >
+              <span
+                ><img
+                  src="anh/z7686950090048_8c2bdf9c982ef0531505313f5225b01d.jpg"
+                  alt=""
+              /></span>
+            </div>
+          </div>
+          <div class="memory-body">
+            <div class="memory-date">Tháng 10 · 2025</div>
+            <div class="memory-title">Lần đầu tiên dỗi nhau :)))</div>
+            <p class="memory-note">
+              Đáng iu lắm nhưng mà thật sự anh yêu em nhìu đến phát khóc v cơ mà
+              hì.
+            </p>
+          </div>
+        </div>
+
+        <div class="memory-card">
+          <div class="memory-img-wrap">
+            <div
+              class="memory-placeholder"
+              style="background: linear-gradient(135deg, #d4fc79, #96e6a1)"
+            >
+              <span
+                ><img
+                  src="anh/z7686953993058_a582487a285b2c2a78df60990d4a2bbe.jpg"
+                  alt=""
+              /></span>
+            </div>
+          </div>
+          <div class="memory-body">
+            <div class="memory-date">Tháng 12 · 2025</div>
+            <div class="memory-title">Giáng sinh đầu tiên</div>
+            <p class="memory-note">
+              Người khiến mùa đông trở thành mùa đẹp nhất trong năm.
+            </p>
+          </div>
+        </div>
+
+        <div class="memory-card">
+          <div class="memory-img-wrap">
+            <div
+              class="memory-placeholder"
+              style="background: linear-gradient(135deg, #a18cd1, #fbc2eb)"
+            >
+              <span
+                ><img
+                  src="anh/z7685527654505_3b1a1f48defe0cbd310e8074ed9e0e11.jpg"
+                  alt=""
+              /></span>
+            </div>
+          </div>
+          <div class="memory-body">
+            <div class="memory-date">Tháng 2 · 2026</div>
+            <div class="memory-title">Valentine đặc biệt</div>
+            <p class="memory-note">
+              Chuyến đi Tam Đảo lần đầu tiên du lịch của chúng mình hí hí
+            </p>
+          </div>
+        </div>
+
+        <div class="memory-card">
+          <div class="memory-img-wrap">
+            <div
+              class="memory-placeholder"
+              style="background: linear-gradient(135deg, #f6d365, #fda085)"
+            >
+              <span
+                ><img
+                  src="anh/z7685551074246_274b2de2575bf690ca943855223754c6.jpg"
+                  alt=""
+              /></span>
+            </div>
+          </div>
+          <div class="memory-body">
+            <div class="memory-date">Tháng 3 · 2026</div>
+            <div class="memory-title">Khoảnh khắc lần đầu tiên</div>
+            <p class="memory-note">
+              Lần đầu tiên 2 đứa tự thuê máy ảnh chụp cho nhau nè
+            </p>
+          </div>
+        </div>
+
+        <div class="memory-card">
+          <div class="memory-img-wrap">
+            <div
+              class="memory-placeholder"
+              style="background: linear-gradient(135deg, #84fab0, #8fd3f4)"
+            >
+              <span
+                ><img
+                  src="anh/z7685552401640_31fcadc51ca5520f88ec052c1802cee3.jpg"
+                  alt=""
+              /></span>
+            </div>
+          </div>
+          <div class="memory-body">
+            <div class="memory-date">Hôm nay 🎂</div>
+            <div class="memory-title">Và còn nhiều hơn nữa...</div>
+            <p class="memory-note">
+              Mỗi ngày với em là một kỷ niệm mới. Anh mong được cùng em viết
+              thêm hàng ngàn trang nữa.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== CLOSING ====== -->
+    <section id="closing">
+      <div class="glow-orb"></div>
+      <div class="glow-orb"></div>
+      <div class="glow-orb"></div>
+      <div class="moon-deco"></div>
+      <div class="sparkle-container" id="sparkle-container"></div>
+      <canvas class="sakura-canvas" id="sakura-canvas"></canvas>
+      <div id="love-words-container"></div>
+      <div class="heart-rain"></div>
+      <div class="closing-inner">
+        <span class="closing-heart">💖</span>
+        <h2 class="closing-title">
+          Chúc mừng sinh nhật,<br />người anh yêu nhất
+        </h2>
+        <div class="closing-divider"></div>
+        <p class="closing-sub">
+          Mỗi năm qua đi là một năm em thêm xinh đẹp,<br />thêm mạnh mẽ và thêm
+          ý nghĩa với anh.
+        </p>
+        <div class="petal-row">🌸 🌷 🌺 🌸 🌷 🌺 🌸</div>
+        <p class="closing-sub" style="font-size: 1.05rem; opacity: 0.8">
+          Dù thời gian trôi qua, dù cuộc đời thay đổi ra sao —<br />anh vẫn sẽ ở
+          đây, yêu em theo cách của ngày hôm nay.
+        </p>
+        <div class="cake-counter">
+          <div class="candle">
+            <span class="flame">🔥</span>
+            <div class="stick"></div>
+          </div>
+          <div class="candle">
+            <span class="flame">🔥</span>
+            <div class="stick"></div>
+          </div>
+          <span
+            style="
+              font-size: 4rem;
+              filter: drop-shadow(0 0 20px rgba(242, 197, 124, 0.5));
+            "
+            >🎂</span
+          >
+          <div class="candle">
+            <span class="flame">🔥</span>
+            <div class="stick"></div>
+          </div>
+          <div class="candle">
+            <span class="flame">🔥</span>
+            <div class="stick"></div>
+          </div>
+        </div>
+        <div class="closing-divider" style="margin-top: 2.5rem"></div>
+        <p class="closing-final">~ Anh yêu em, hôm qua, hôm nay và mãi mãi ~</p>
+        <p
+          style="
+            margin-top: 1.5rem;
+            color: rgba(249, 168, 201, 0.4);
+            font-size: 2rem;
+            letter-spacing: 0.5rem;
+            animation: petalRow 2s ease-in-out infinite;
+          "
+        >
+          ✦ ♡ ✦ ♡ ✦
+        </p>
+      </div>
+    </section>
+
+    <!-- ====== MUSIC PLAYER ====== -->
+    <div id="music-player">
+      <div class="music-panel" id="music-panel">
+        <div class="music-song-name">
+          <span id="song-name">🎵 Bấm để nghe heng</span>
+        </div>
+        <div class="music-controls">
+          <button class="music-btn sm" id="btn-rewind">⏮</button>
+          <button class="music-btn" id="btn-play">▶</button>
+          <button class="music-btn sm" id="btn-forward">⏭</button>
+        </div>
+        <input
+          type="range"
+          class="music-progress"
+          id="music-progress"
+          value="0"
+          min="0"
+          max="100"
+          step="0.1"
+        />
+        <div class="music-time">
+          <span id="time-current">0:00</span>
+          <span id="time-total">0:00</span>
+        </div>
+        <div class="music-volume-row">
+          <span>🔈</span>
+          <input
+            type="range"
+            class="music-volume"
+            id="music-volume"
+            value="80"
+            min="0"
+            max="100"
+          />
+          <span>🔊</span>
+        </div>
+        <label class="music-upload-label" for="music-file-input">
+          🎶 Chọn file nhạc của bạn
+          <input
+            type="file"
+            id="music-file-input"
+            accept="audio/*"
+            style="display: none"
+          />
+        </label>
+      </div>
+      <button class="music-toggle" id="music-toggle">
+        <span class="music-note-spin">🎵</span>
+      </button>
+    </div>
+
+    <audio id="bg-audio" loop src="anh\7686959346667.mp3"></audio>
+
+    <script>
+      /* ===== MUSIC PLAYER ===== */
+      const audio = document.getElementById("bg-audio");
+      const panel = document.getElementById("music-panel");
+      const toggleBtn = document.getElementById("music-toggle");
+      const playBtn = document.getElementById("btn-play");
+      const rewindBtn = document.getElementById("btn-rewind");
+      const forwardBtn = document.getElementById("btn-forward");
+      const progressBar = document.getElementById("music-progress");
+      const volumeBar = document.getElementById("music-volume");
+      const timeCurrent = document.getElementById("time-current");
+      const timeTotal = document.getElementById("time-total");
+      const songName = document.getElementById("song-name");
+      const fileInput = document.getElementById("music-file-input");
+      audio.volume = 0.8;
+      audio.volume = 0.8;
+
+      // Phát nhạc ngay khi người dùng chạm/click lần đầu
+      function tryAutoplay() {
+        if (audio.src && audio.paused) {
+          audio
+            .play()
+            .then(() => {
+              playBtn.textContent = "⏸";
+              toggleBtn.classList.add("playing");
+              songName.textContent = "🎵 Nhạc nền";
+            })
+            .catch(() => {});
+        }
+        document.removeEventListener("click", tryAutoplay);
+        document.removeEventListener("touchstart", tryAutoplay);
+      }
+      document.addEventListener("click", tryAutoplay);
+      document.addEventListener("touchstart", tryAutoplay);
+      // Mở panel mặc định để người dùng thấy nút upload
+      panel.classList.add("open");
+
+      toggleBtn.addEventListener("click", () => panel.classList.toggle("open"));
+
+      fileInput.addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        audio.src = URL.createObjectURL(file);
+        songName.textContent = file.name.replace(/\.[^.]+$/, "");
+        // Phát nhạc ngay lập tức
+        const playPromise = audio.play();
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              playBtn.textContent = "⏸";
+              toggleBtn.classList.add("playing");
+            })
+            .catch(() => {
+              // Browser chặn autoplay — chờ user click
+              playBtn.textContent = "▶";
+            });
+        }
+      });
+
+      playBtn.addEventListener("click", () => {
+        if (!audio.src) return;
+        if (audio.paused) {
+          audio.play();
+          playBtn.textContent = "⏸";
+          toggleBtn.classList.add("playing");
+        } else {
+          audio.pause();
+          playBtn.textContent = "▶";
+          toggleBtn.classList.remove("playing");
+        }
+      });
+
+      rewindBtn.addEventListener("click", () => {
+        audio.currentTime = Math.max(0, audio.currentTime - 10);
+      });
+      forwardBtn.addEventListener("click", () => {
+        audio.currentTime = Math.min(
+          audio.duration || 0,
+          audio.currentTime + 10,
+        );
+      });
+
+      progressBar.addEventListener("input", () => {
+        if (audio.duration)
+          audio.currentTime = (progressBar.value / 100) * audio.duration;
+      });
+      volumeBar.addEventListener("input", () => {
+        audio.volume = volumeBar.value / 100;
+      });
+
+      audio.addEventListener("timeupdate", () => {
+        if (!audio.duration) return;
+        progressBar.value = (audio.currentTime / audio.duration) * 100;
+        timeCurrent.textContent = fmt(audio.currentTime);
+        timeTotal.textContent = fmt(audio.duration);
+      });
+      audio.addEventListener("ended", () => {
+        playBtn.textContent = "▶";
+        toggleBtn.classList.remove("playing");
+      });
+
+      function fmt(s) {
+        const m = Math.floor(s / 60),
+          sec = Math.floor(s % 60);
+        return m + ":" + (sec < 10 ? "0" : "") + sec;
+      }
+
+      /* ===== CONFETTI ===== */
+      const canvas = document.getElementById("canvas-confetti");
+      const ctx = canvas.getContext("2d");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      const COLORS = [
+        "#f9a8c9",
+        "#e87aad",
+        "#fce4ec",
+        "#ead6f5",
+        "#ffd6c9",
+        "#f2c57c",
+        "#fff0a0",
+        "#c9f0ff",
+      ];
+      const pieces = [];
+      for (let i = 0; i < 120; i++) {
+        pieces.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height - canvas.height,
+          w: Math.random() * 10 + 5,
+          h: Math.random() * 5 + 3,
+          color: COLORS[Math.floor(Math.random() * COLORS.length)],
+          rot: Math.random() * Math.PI * 2,
+          vx: (Math.random() - 0.5) * 1.5,
+          vy: Math.random() * 2 + 1,
+          vrot: (Math.random() - 0.5) * 0.1,
+          shape: Math.random() > 0.5 ? "rect" : "circle",
+        });
+      }
+      function drawConfetti() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        pieces.forEach((p) => {
+          ctx.save();
+          ctx.translate(p.x, p.y);
+          ctx.rotate(p.rot);
+          ctx.fillStyle = p.color;
+          ctx.globalAlpha = 0.85;
+          if (p.shape === "circle") {
+            ctx.beginPath();
+            ctx.arc(0, 0, p.w / 2, 0, Math.PI * 2);
+            ctx.fill();
+          } else {
+            ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+          }
+          ctx.restore();
+          p.x += p.vx;
+          p.y += p.vy;
+          p.rot += p.vrot;
+          if (p.y > canvas.height + 20) {
+            p.y = -20;
+            p.x = Math.random() * canvas.width;
+          }
+        });
+        requestAnimationFrame(drawConfetti);
+      }
+      drawConfetti();
+      window.addEventListener("resize", () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      });
+
+      /* ===== FLOATING HEARTS ===== */
+      const heartsContainer = document.getElementById("hearts-container");
+      const heartEmojis = ["💕", "🌸", "💖", "✨", "💝", "🌷", "💗"];
+      function spawnHeart() {
+        const el = document.createElement("div");
+        el.className = "float-heart";
+        el.textContent =
+          heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
+        el.style.left = Math.random() * 100 + "vw";
+        el.style.fontSize = Math.random() * 1.5 + 0.8 + "rem";
+        const dur = Math.random() * 8 + 8;
+        el.style.animation = `floatHeart ${dur}s linear forwards`;
+        heartsContainer.appendChild(el);
+        setTimeout(() => el.remove(), dur * 1000);
+      }
+      setInterval(spawnHeart, 700);
+      for (let i = 0; i < 8; i++) setTimeout(spawnHeart, i * 300);
+
+      /* ===== SPARKLES ===== */
+      const sparkContainer = document.getElementById("sparkle-container");
+      function spawnSparkle() {
+        const s = document.createElement("div");
+        s.className = "sparkle";
+        s.style.left = Math.random() * 100 + "%";
+        s.style.top = Math.random() * 100 + "%";
+        const dur = Math.random() * 3 + 2;
+        s.style.animation = `sparklePop ${dur}s ease-in-out infinite`;
+        s.style.animationDelay = Math.random() * 3 + "s";
+        const sz = Math.random() * 6 + 3 + "px";
+        s.style.width = sz;
+        s.style.height = sz;
+        sparkContainer.appendChild(s);
+      }
+      for (let i = 0; i < 45; i++) spawnSparkle();
+
+      /* ===== SAKURA PETALS ===== */
+      const sakuraCanvas = document.getElementById("sakura-canvas");
+      const sCtx = sakuraCanvas.getContext("2d");
+      function resizeSakura() {
+        const cl = document.getElementById("closing");
+        sakuraCanvas.width = cl.offsetWidth;
+        sakuraCanvas.height = cl.offsetHeight;
+      }
+      resizeSakura();
+      window.addEventListener("resize", resizeSakura);
+      const petals = [];
+      const PETAL_COLORS = [
+        "rgba(249,168,201,.7)",
+        "rgba(252,228,236,.6)",
+        "rgba(234,214,245,.65)",
+        "rgba(255,214,201,.55)",
+        "rgba(242,197,124,.5)",
+      ];
+      for (let i = 0; i < 60; i++) {
+        petals.push({
+          x: Math.random() * (sakuraCanvas.width || window.innerWidth),
+          y: Math.random() * (sakuraCanvas.height || window.innerHeight),
+          r: Math.random() * 5 + 3,
+          color: PETAL_COLORS[Math.floor(Math.random() * PETAL_COLORS.length)],
+          vx: (Math.random() - 0.5) * 0.8,
+          vy: Math.random() * 1.2 + 0.4,
+          rot: Math.random() * Math.PI * 2,
+          vrot: (Math.random() - 0.5) * 0.04,
+          wobble: Math.random() * Math.PI * 2,
+          wobbleSpeed: Math.random() * 0.03 + 0.01,
+        });
+      }
+      function drawPetal(cx, x, y, r, rot) {
+        cx.save();
+        cx.translate(x, y);
+        cx.rotate(rot);
+        cx.beginPath();
+        cx.moveTo(0, -r);
+        cx.bezierCurveTo(r * 0.8, -r * 0.5, r * 0.8, r * 0.5, 0, r);
+        cx.bezierCurveTo(-r * 0.8, r * 0.5, -r * 0.8, -r * 0.5, 0, -r);
+        cx.closePath();
+        cx.fill();
+        cx.restore();
+      }
+      function animateSakura() {
+        const w = sakuraCanvas.width,
+          h = sakuraCanvas.height;
+        sCtx.clearRect(0, 0, w, h);
+        petals.forEach((p) => {
+          p.wobble += p.wobbleSpeed;
+          p.x += p.vx + Math.sin(p.wobble) * 0.5;
+          p.y += p.vy;
+          p.rot += p.vrot;
+          if (p.y > h + 20) {
+            p.y = -20;
+            p.x = Math.random() * w;
+          }
+          if (p.x < -20) p.x = w + 10;
+          if (p.x > w + 20) p.x = -10;
+          sCtx.fillStyle = p.color;
+          drawPetal(sCtx, p.x, p.y, p.r, p.rot);
+        });
+        requestAnimationFrame(animateSakura);
+      }
+      animateSakura();
+
+      /* ===== FLOATING LOVE WORDS ===== */
+      const loveWordsContainer = document.getElementById(
+        "love-words-container",
+      );
+      const loveWords = [
+        "yêu em",
+        "mãi mãi",
+        "forever",
+        "love you",
+        "hạnh phúc",
+        "❤",
+        "sweet",
+        "bên em",
+        "forever mine",
+        "together",
+        "em là của anh",
+        "♡",
+        "always",
+        "my love",
+        "trọn đời",
+      ];
+      function spawnLoveWord() {
+        const el = document.createElement("div");
+        el.className = "love-word";
+        el.textContent =
+          loveWords[Math.floor(Math.random() * loveWords.length)];
+        el.style.left = Math.random() * 100 + "%";
+        el.style.fontSize = Math.random() * 1.4 + 0.8 + "rem";
+        const dur = Math.random() * 12 + 10;
+        el.style.animation = `loveDrift ${dur}s linear forwards`;
+        loveWordsContainer.appendChild(el);
+        setTimeout(() => el.remove(), dur * 1000);
+      }
+      let loveWordInterval;
+      const closingSection = document.getElementById("closing");
+      new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              loveWordInterval = setInterval(spawnLoveWord, 1500);
+              for (let i = 0; i < 5; i++) setTimeout(spawnLoveWord, i * 600);
+            } else {
+              clearInterval(loveWordInterval);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      ).observe(closingSection);
+
+      /* ===== SCROLL REVEAL ===== */
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("visible");
+          });
+        },
+        { threshold: 0.1 },
+      );
+      document.querySelectorAll(".tl-item, .memory-card").forEach((el, i) => {
+        el.style.transitionDelay = i * 0.08 + "s";
+        observer.observe(el);
+      });
+    </script>
+  </body>
+</html>
